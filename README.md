@@ -1,2 +1,2 @@
 # babylon-ad
-Kotlin Benin Developer Group
+Kotlin Developer Commnunity (Benin City)
