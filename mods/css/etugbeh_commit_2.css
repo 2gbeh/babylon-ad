@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* CSS Document */
+table#target td.all {
+	background-color:#EEE;
+	color:#EEE;
+	border:0;}
+table#target td#cell-25 {position:relative;}
+table#target td#cell-25::after {
+	content:" ";
+	background-color:#EE1111;
+	color:white;
+	width:45px;	
+	height:45px;
+	border-radius:100%;	
+	z-index:1px;
+	display:block;
+	position:absolute;	
+	left:2px;
+	top:1px;}
+	

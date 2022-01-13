@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/* CSS Document */
+table#target td.all {
+	background-color:black;
+	color:transparent;
+	border:solid thin white;}
+table#target td#cell-16, 
+table#target td#cell-30,
+table#target td#cell-25, 
+table#target td#cell-27 
+{
+	position:relative;
+}
+table#target td#cell-16::after, 
+table#target td#cell-30::after, 
+table#target td#cell-25::after, 
+table#target td#cell-27::after
+{
+	content:" ";
+	width:25px;	
+	height:25px;
+	border-radius:100%;	
+	z-index:1px;
+	display:block;
+	position:absolute;	
+	left:10px;
+	top:10px;
+
+	background-color:white;
+	animation-timing-function:linear;
+	animation-iteration-count:infinite;
+	animation-direction:alternate;
+}
+table#target td#cell-16::after 
+{
+	animation-name:track-1;	
+	animation-duration:0.4s; 
+	animation-delay:0;
+}
+table#target td#cell-30::after 
+{
+	animation-name:track-2;	
+	animation-duration:0.6s; 
+	animation-delay:0.5s;
+}
+table#target td#cell-25::after 
+{
+	animation-name:track-3;	
+	animation-duration:0.8s; 
+	animation-delay:1s;
+}
+table#target td#cell-27::after 
+{
+	animation-name:track-4;	
+	animation-duration:1s; 
+	animation-delay:1.5s;
+}
+
+@keyframes track-1 {from {background-color:white;} to{background-color:purple;}}
+@keyframes track-2 {from {background-color:white;} to{background-color:green;}}
+@keyframes track-3 {from {background-color:white;} to{background-color:red;}}
+@keyframes track-4 {from {background-color:white;} to{background-color:blue;}}
+
+
+

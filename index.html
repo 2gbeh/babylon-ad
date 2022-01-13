@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="NOODP" />
+<meta name="subject" content="Repository" />
+<meta name="description" content="Git Project for KOTLIN BENIN" />
+<meta name="author" content="Tugbeh Emmanuel" />
+<meta name="copyright" content="2019" />
+<meta name="owner" content="HWP Labs" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<title>Babylon.git | KOTLIN BENIN</title>
+<style type="text/css">
+* {box-sizing:border-box;}
+body {
+	padding:0; 
+	margin:0;
+	background-color:#EEE;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:12px;}
+main {
+	margin:20px auto;	
+	background-color:black;
+	width:360px;
+	min-width:360px;}
+var {font-style:normal;}
+table#target {
+	border:10px solid;
+	border-collapse:collapse;}
+table#target tr td {
+	background-color:white;
+	color:white;
+	width:50px;
+	height:50px;	
+	text-align:center;
+	font-size:10px;
+	border:solid thin black;
+	cursor:cell;}
+ul#pager {
+	padding:0;
+	margin:0;
+	text-align:right;
+	list-style-type:none;}
+ul#pager li {
+	padding:5px 10px;
+	background-color:black;
+	color:white;
+	border:solid thin white;
+	display:inline-block;}	
+ul#pager li:first-child {
+	margin-right:5px;	
+	background-color:white;
+	color:black;
+	font-family:"Courier New", Courier, monospace;}
+ul#pager li:nth-child(2) {margin-right:5px;}	
+ul#pager li:last-child {margin-right:10px;}
+ul#pager li:hover {
+	background-color:white;
+	color:black;
+	cursor:pointer;}	
+table#source {
+	color:white;
+	padding:10px;}
+table#source tr {vertical-align:top;}	
+table#source td {padding-right:5px;}
+table#source td#caption {font-style:italic;}	
+table#source td#caption::before {content:'" ';}	
+table#source td#caption::after {content:' "';}	
+footer {
+	padding:10px;
+	text-align:center;
+	text-shadow:0 1px 0 #FFF;	
+	clear:right;}
+</style>
+<link type="text/css" rel="stylesheet" />
+<script type="text/javascript" async></script>
+</head>
+<body>
+<main>
+    <table id="target"></table>
+    <ul id="pager" data-pointer="0">
+    	<li>Commit <var id="real">1</var>/<var id="size">n</var></li>
+        <li onClick="pager(0)" title="Previous">Prev</li>
+        <li onClick="pager(1)" title="Next">Next</li>    
+    </ul>
+    <table id="source">
+        <tr><td>Caption :</td><td id="caption">Canvas</td></tr>
+        <tr><td>Filename :</td><td id="filename">---</td></tr>        
+        <tr><td>Author :</td><td id="author">HWP Labs</td></tr>
+        <tr><td>Contact :</td><td id="contact">dive.hwplabs.com</td></tr>        
+        <tr><td>Date :</td><td id="date">Saturday, November 8, 2019.</td></tr>                
+    </table>
+</main>
+<footer>Copyright &copy; 2019 KOTLIN BENIN</footer>
+<script type="text/javascript">
+// JavaScript Document
+begin();
+function getter (key) {return document.getElementById(key).innerHTML;}
+function setter (key, value) {document.getElementById(key).innerHTML = value;}
+function begin ()
+{
+	var size = 7, i = 0;
+	var buffer = "", title = "", onclick = "", grid = "";
+	var row = "", column = "", cell = "";
+	var target = document.getElementById('target');
+	for (var y = 1; y <= size; y++)
+	{
+		row = 'row-'+y;
+		buffer = "<tr class='"+row+"'>";
+		for (var x = 1; x <= size; x++)
+		{
+			i++;			
+			column = 'col-'+x;
+			cell = 'cell-'+i;
+			title = 'Cell: '+i+' (Row '+y+', Col '+x+')'; 
+			onclick = i+","+y+","+x;
+			buffer += "<td title='"+title+"' class='all "+column+"' id='"+cell+"' onclick=vardump("+onclick+")>"+i+"</td>";
+		}	
+		buffer += "</tr>";
+		grid += buffer;
+	}
+	target.innerHTML = grid;
+	connect();
+}
+function connect () {scanner('ini.xml',read);}
+function read (http)
+{
+	var parserObject = new DOMParser();
+	var xmlObject = parserObject.parseFromString(http,"text/xml");
+	var xmlArray = xmlObject.getElementsByTagName("row");
+	var entryObject = new entry(xmlArray,pointer());
+	setter('real',entryObject.real);	
+	setter('size',entryObject.size);
+	setter('caption',entryObject.caption);	
+	setter('filename',entryObject.filename);
+	setter('author',entryObject.author);
+	setter('contact',entryObject.contact);	
+	setter('date',entryObject.getWTCDate());
+	entryObject.display();	
+}
+function vardump (cell, row, column)
+{
+	var buffer = "*** BABYLON.git ***\n";
+	buffer += "Cell: "+cell+"\n";
+	buffer += "Row: "+row+"\n";
+	buffer += "Column: "+column;
+	alert(buffer);
+}
+function pointer (args) 
+{
+	var pager = document.getElementById('pager');
+	if (!isNaN(args)) pager.setAttribute("data-pointer",args);
+	else return parseInt(pager.getAttribute("data-pointer"));
+}
+function pager (args) 
+{
+	var lmt = parseInt(getter('size'));
+	var cur = pointer();
+	var res = args < 1? (cur-1):(cur+1);
+	if (args < 1) now = res < 0? (lmt-1):res;
+	else now = res >= lmt? 0:res;
+	pointer(now);
+	connect();
+}
+function scanner (directory, callback) 
+{
+	var xhttp;
+	if (window.XMLHttpRequest) 
+		xhttp = new XMLHttpRequest();
+	else
+		xhttp = new ActiveXObject("Microsoft.XMLHTTP");		
+	xhttp.onreadystatechange = function() 
+	{
+		if (this.readyState == 4 && this.status == 200)
+			callback(this.responseText);
+	};
+	xhttp.open("GET",directory,true);
+	xhttp.send();
+}
+function entry (args, i) 
+{	
+	// Properties
+	this.index = i;
+	this.real = i + 1;
+	this.size = args.length;
+	this.caption = getValueOf('caption');
+	this.filename = getValueOf('filename');
+	this.author = getValueOf('author');
+	this.contact = getValueOf('contact');
+	this.date = getValueOf('date');
+	// Methods
+	function getValueOf(node) {return args[i].getElementsByTagName(node)[0].innerHTML;}	
+	this.getWTCDate = function() 
+	{
+		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+		var months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+		var dateObject = new Date(this.date);
+		var buffer = days[dateObject.getDay()]+", ";
+		buffer += months[dateObject.getMonth()]+" ";
+		buffer += dateObject.getDate()+", ";
+		buffer += dateObject.getFullYear();
+		return buffer;
+	}
+	this.display = function() 
+	{
+		var lnk = document.getElementsByTagName('link').item(0);
+		var spt = document.getElementsByTagName('script').item(0);
+		var ext = this.filename.split(".").pop();
+		if (ext == "css") lnk.setAttribute('href',"mods/css/"+this.filename);
+		else spt.setAttribute('src',"mods/js/"+this.filename);
+	}	
+}
+</script>
+</body>
+</html>
+
+

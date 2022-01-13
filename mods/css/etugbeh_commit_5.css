@@ -1,0 +1,18 @@
+@charset "UTF-8";
+/* CSS Document */
+table#target td.all {
+	background-color:white;
+	color:transparent;
+	border:0;
+	animation:animax 3.5s linear infinite alternate;}
+@keyframes animax 
+{
+    0% {background-color:#9400D3;}
+    15% {background-color:#4B0082;}	
+    30% {background-color:#0000FF;}	
+    45% {background-color:#00FF00;}
+    60% {background-color:#FFFF00;}	
+    75% {background-color:#FF7F00;}	
+    90% {background-color:#FF0000;}
+    100% {background-color:#9400D3;}	
+}

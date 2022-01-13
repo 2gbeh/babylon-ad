@@ -1,0 +1,39 @@
+@charset "UTF-8";
+/* CSS Document */
+table#target td.all {color:transparent;}
+
+table#target td#cell-1,
+table#target td#cell-2,
+table#target td#cell-8,
+table#target td#cell-9,
+table#target td#cell-16,
+table#target td#cell-17 {
+	background-color:green;}
+	
+table#target td#cell-6,
+table#target td#cell-7,
+table#target td#cell-12,
+table#target td#cell-13,
+table#target td#cell-14,
+table#target td#cell-19 {
+	background-color:red;}	
+	
+table#target td#cell-31,
+table#target td#cell-36,
+table#target td#cell-37,
+table#target td#cell-38,
+table#target td#cell-43,
+table#target td#cell-44 {
+	background-color:yellow;}
+	
+table#target td#cell-33,
+table#target td#cell-34,
+table#target td#cell-41,
+table#target td#cell-42,
+table#target td#cell-48,
+table#target td#cell-49 {
+	background-color:blue;}		
+	
+table#target td#cell-25 {background-color:black;}
+
+

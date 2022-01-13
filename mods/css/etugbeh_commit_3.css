@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+table#target td.all {
+	background-color:white;
+	color:black;}
+table#target td#cell-4, 
+table#target td#cell-8, 
+table#target td#cell-10, 
+table#target td#cell-12, 
+table#target td#cell-14, 
+table#target td#cell-22, 
+table#target td#cell-23, 
+table#target td#cell-24, 
+table#target td#cell-26, 
+table#target td#cell-27, 
+table#target td#cell-28, 
+table#target td#cell-36, 
+table#target td#cell-38, 
+table#target td#cell-40, 
+table#target td#cell-42, 
+table#target td#cell-46
+ {background-color:black;}

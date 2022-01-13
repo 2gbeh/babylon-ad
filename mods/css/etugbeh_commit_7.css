@@ -1,0 +1,25 @@
+@charset "UTF-8";
+/* CSS Document */
+table#target td.all {
+	background-color:black;
+	border:0;
+	color:transparent;}
+
+table#target td#cell-9,
+table#target td#cell-11,
+table#target td#cell-12,
+table#target td#cell-13,
+table#target td#cell-16,
+table#target td#cell-18,
+table#target td#cell-23,
+table#target td#cell-25,
+table#target td#cell-26,
+table#target td#cell-27,
+table#target td#cell-30,
+table#target td#cell-34,
+table#target td#cell-37,
+table#target td#cell-39,
+table#target td#cell-40,
+table#target td#cell-41 {
+	background-color:white;}
+	

@@ -1,0 +1,56 @@
+@charset "UTF-8";
+table#target td.all {
+	background-color:black;
+	color:transparent;
+	border:0;
+	border-right:10px solid black;}
+	
+table#target td#cell-3,
+table#target td#cell-11,
+table#target td#cell-23,
+table#target td#cell-34,
+table#target td#cell-36,
+table#target td#cell-47,
+table#target td#cell-49 {
+	border-radius:100% 100% 0 0;}
+
+/* C++		8584	9.2	2*/
+table#target td#cell-36,
+table#target td#cell-43 {
+	background-color:#DD4B39;}
+/* C#		13523	14.4	4 */	
+table#target td#cell-23,
+table#target td#cell-30,
+table#target td#cell-37,
+table#target td#cell-44 {
+	background-color:#F39C12;}
+/* Java		26269	28	7 */	
+table#target td#cell-3,
+table#target td#cell-10,
+table#target td#cell-17,
+table#target td#cell-24,
+table#target td#cell-31,
+table#target td#cell-38,
+table#target td#cell-45 {
+	background-color:#00A65A;}
+/* JavaScript	24248	25.9	6 */	
+table#target td#cell-11,
+table#target td#cell-18,
+table#target td#cell-25,
+table#target td#cell-32,
+table#target td#cell-39,
+table#target td#cell-46 {
+	background-color:#00A65A;}
+/* PHP		4971	5.3	1 */	
+table#target td#cell-47 {
+	background-color:#DD4B39;}
+/* Python		11757	12.5	3 */		
+table#target td#cell-34,
+table#target td#cell-41,
+table#target td#cell-48 {
+	background-color:#F39C12;}
+/* Ruby		4417	4.7	1 */	
+table#target td#cell-49 {
+	background-color:#DD4B39;}
+	
+	
